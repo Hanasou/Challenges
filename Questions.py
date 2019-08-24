@@ -29,3 +29,17 @@ def pal_perm(s):
                 counter -= 1
                 break
     return s == s[::-1]
+
+def area_container(a):
+    left = 0
+    right = len(a) - 1
+    max_area = 0
+    while right > left:
+        pass
+        length = right - left
+        max_area = max(max_area, length * min(a[right], a[left]))
+        if a[right] > a[left]:
+            left += 1
+        else:
+            right -= 1
+    return max_area
