@@ -96,9 +96,6 @@ def insert_pos(nums, target):
     
     return left
 
-array = [[1,5,7,8, 9, 11, 15, 22]]
-print(11 // 2)
-
 # Board is a list of nine lists. Blank spaces are periods.
 # Brute force this first.
 def valid_sud(board):
@@ -231,3 +228,32 @@ def valid_par(s):
                 return False
     
     return len(listing) == 0
+
+"""
+Given an array of non-negative integers, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum jump length at that position.
+Determine if you are able to reach the last index.
+e.g. 
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+"""
+def can_jump(nums):
+    def jump_recurse(nums, pos):
+        if pos == len(nums) - 1:
+            return True
+        for n in range(pos + 1, min(nums[pos] + pos, len(nums) - 1) - 1):
+            if jump_recurse(nums, pos + n):
+                return True
+        return False
+    jump_recurse(nums, 0)
+
+"""
+Do this sudoku solver my dude.
+"""
+def solve_sudoku(board):
+    def sudoku_helper(board, pos):
+        # Determine these lists based on pos
+        row = []
+        col = []
+        sb = []

@@ -1,0 +1,13 @@
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\bin\Debug\netcoreapp3.1\Challenges.exe
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\bin\Debug\netcoreapp3.1\Challenges.deps.json
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\bin\Debug\netcoreapp3.1\Challenges.runtimeconfig.json
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\bin\Debug\netcoreapp3.1\Challenges.runtimeconfig.dev.json
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\bin\Debug\netcoreapp3.1\Challenges.dll
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\bin\Debug\netcoreapp3.1\Challenges.pdb
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.csprojAssemblyReference.cache
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.AssemblyInfoInputs.cache
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.AssemblyInfo.cs
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.csproj.CoreCompileInputs.cache
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.dll
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.pdb
+C:\Users\royzh\Documents\Projects\Challenges\C#\Challenges\obj\Debug\netcoreapp3.1\Challenges.genruntimeconfig.cache
