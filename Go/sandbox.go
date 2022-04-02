@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"reflect"
 	"strconv"
 	"strings"
@@ -104,58 +103,4 @@ func allUnique(s string) bool {
 		counts[c] = true
 	}
 	return true
-}
-
-func main() {
-	type requestObject struct {
-		IssueID     string
-		ProjectID   string
-		Title       string
-		Description string
-		Status      string
-		Type        string
-		Priority    string
-	}
-	exampleObject := requestObject{
-		IssueID:     "issueVal",
-		ProjectID:   "projectVal",
-		Title:       "titleVal",
-		Description: "descriptionVal",
-	}
-	objectFields := reflect.TypeOf(exampleObject)
-	objectValues := reflect.ValueOf(exampleObject)
-	updateAttributes := map[string]string{}
-	var expressionBuilder strings.Builder
-	expressionBuilder.WriteString("SET ")
-
-	// Update expressions are formatted like "Operation FieldName = AttributeValue"
-	// e.g. "SET Title = :ti, Description = :d"
-	for i := 0; i < objectFields.NumField(); i++ {
-		field := objectFields.Field(i).Name
-		value := objectValues.Field(i).String()
-		if value == "" {
-			continue
-		}
-		switch field {
-		case "Title":
-			expressionBuilder.WriteString(field + " = " + value + ", ")
-			updateAttributes[":ti"] = value
-		case "Description":
-			expressionBuilder.WriteString(field + " = " + value + ", ")
-			updateAttributes[":d"] = value
-		case "Status":
-			expressionBuilder.WriteString(field + " = " + value + ", ")
-			updateAttributes[":s"] = value
-		case "Type":
-			expressionBuilder.WriteString(field + " = " + value + ", ")
-			updateAttributes[":ty"] = value
-		case "Priority":
-			expressionBuilder.WriteString(field + " = " + value + ", ")
-			updateAttributes[":p"] = value
-		}
-	}
-
-	s := expressionBuilder.String()
-	slicedString := s[:len(s)-2]
-	fmt.Println(slicedString)
 }
