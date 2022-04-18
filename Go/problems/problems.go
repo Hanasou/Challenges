@@ -48,3 +48,26 @@ func ReverseInt(n int) int {
 
 	return newInt
 }
+
+func MaxChar(str string) string {
+	counts := map[string]int{}
+	for _, v := range str {
+		charString := string(v)
+		if i, ok := counts[charString]; ok {
+			counts[charString] = i + 1
+		} else {
+			counts[charString] = 1
+		}
+	}
+
+	// iterate over map for largest value
+	maxChar := ""
+	maxCount := 0
+	for k, v := range counts {
+		if v > maxCount {
+			maxCount = v
+			maxChar = string(k)
+		}	
+	}
+	return maxChar
+}

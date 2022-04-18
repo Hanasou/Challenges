@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(problems.ReverseInt(-400))
+	fmt.Println(problems.MaxChar("helloooooo"))
 }
