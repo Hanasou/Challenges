@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(problems.MaxChar("helloooooo"))
+	fmt.Println(problems.IsAnagram("rail safety!!!!", "FAIRY tales"))
 }
