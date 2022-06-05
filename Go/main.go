@@ -7,4 +7,5 @@ import (
 
 func main() {
 	fmt.Println(problems.IsAnagram("rail safety!!!!", "FAIRY tales"))
+	problems.Pyramid(5)
 }

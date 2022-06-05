@@ -142,3 +142,62 @@ func IsAnagram(a string, b string) bool {
 
 	return reflect.DeepEqual(aMap, bMap)
 }
+
+func Steps(n int) {
+	for i := 1; i <= n; i++ {
+		row := ""
+		for j := 1; j <= i; j++ {
+			row += "#"
+		}
+		for k := 1; k <= n-i; k++ {
+			row += "@"
+		}
+		fmt.Println(row)
+	}
+}
+
+func StepsRecursive(n int) {
+	if n == 0 {
+		return
+	}
+
+	stepsRecursiveHelper(n, n)
+}
+
+func stepsRecursiveHelper(curr int, total int) {
+	if curr == 0 {
+		return
+	}
+	row := ""
+	for i := 1; i <= total-curr+1; i++ {
+		row += "#"
+	}
+	for j := 1; j <= curr-1; j++ {
+		row += "@"
+	}
+	fmt.Println(row)
+	stepsRecursiveHelper(curr-1, total)
+}
+
+func Pyramid(n int) {
+	for i := 1; i <= n; i++ {
+		row := ""
+		// First set of empty space
+		for j := 1; j <= n-i; j++ {
+			row += "@"
+		}
+		// First half of pound signs
+		for k := 1; k <= i; k++ {
+			row += "#"
+		}
+		// Second half of pound signs
+		for l := 1; l <= i-1; l++ {
+			row += "#"
+		}
+		// Second set of empty space
+		for m := 1; m <= n-i; m++ {
+			row += "@"
+		}
+		fmt.Println(row)
+	}
+}
