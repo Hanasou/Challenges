@@ -19,6 +19,18 @@ func Reverse(str string) string {
 	return new
 }
 
+func ReverseRecursive(str string) string {
+	return ReverseRecursiveHelper(str, "", len(str)-1)
+}
+
+func ReverseRecursiveHelper(str string, val string, index int) string {
+	if index < 0 {
+		return val
+	}
+	val += string(str[index])
+	return ReverseRecursiveHelper(str, val, index-1)
+}
+
 func Palindrome(str string) bool {
 	front := 0
 	back := len(str) - 1
@@ -30,6 +42,20 @@ func Palindrome(str string) bool {
 		back--
 	}
 	return true
+}
+
+func PalindromeRecursive(str string) bool {
+	return PalindromeRecursiveHelper(str, 0, len(str)-1)
+}
+
+func PalindromeRecursiveHelper(str string, front int, back int) bool {
+	if front > back {
+		return true
+	}
+	if str[front] != str[back] {
+		return false
+	}
+	return PalindromeRecursiveHelper(str, front+1, back-1)
 }
 
 func ReverseInt(n int) int {
@@ -200,4 +226,109 @@ func Pyramid(n int) {
 		}
 		fmt.Println(row)
 	}
+}
+
+// Return number of vowels in string
+func Vowels(s string) int {
+	vowels := map[rune]bool{
+		'a': true,
+		'e': true,
+		'i': true,
+		'o': true,
+		'u': true,
+	}
+
+	vCount := 0
+
+	for _, v := range strings.ToLower(s) {
+		if _, ok := vowels[v]; ok {
+			vCount++
+		}
+	}
+	return vCount
+}
+
+// This function accepts an integer n and returns an nxn spiral matrix
+// e.g Matrix(2) => [[1,2], [4,3]]
+// Matrix(3) => [[1,2,3], [8,9,4], [7,6,5]]
+func Matrix(n int) [][]int {
+	// Initialize matrix
+	solution := [][]int{}
+	// Fill matrix with 0s
+	for i := 1; i <= n; i++ {
+		curr := []int{}
+		for j := 1; j <= n; j++ {
+			curr = append(curr, 0)
+		}
+		solution = append(solution, curr)
+	}
+
+	// Counter will track the number we place into the matrix
+	counter := 1
+
+	// Initialize several variables that represent the bounds of the matrix
+	// We'll be changing the bounds while we iterate
+	startRow, startCol := 0, 0
+	endRow, endCol := n-1, n-1
+
+	for startRow <= endRow && startCol <= endCol {
+		// Fill top row
+		for i := startCol; i <= endCol; i++ {
+			solution[startRow][i] = counter
+			counter++
+		}
+		startRow++
+		// Fill right col
+		for j := startRow; j <= endRow; j++ {
+			solution[j][endCol] = counter
+			counter++
+		}
+		endCol--
+		// Fill bottom row
+		for k := endCol; k >= startCol; k-- {
+			solution[endRow][k] = counter
+			counter++
+		}
+		endRow--
+		// Fill left col
+		for l := endRow; l >= startRow; l-- {
+			solution[l][endCol] = counter
+			counter++
+		}
+		startCol++
+	}
+	return solution
+}
+
+func FibIterative(n int) int {
+	// The first number in the fibonacci series is 0
+	first := 0
+	// The second is 1
+	second := 1
+	total := first + second
+
+	for i := 3; i <= n; i++ {
+		total = first + second
+		first = second
+		second = total
+	}
+	return total
+}
+
+func FibRecursive(n int) int {
+	mem := []int{}
+	for i := 0; i <= n; i++ {
+		mem = append(mem, -1)
+	}
+	return FibRecursiveHelper(n, mem)
+}
+
+func FibRecursiveHelper(n int, mem []int) int {
+	if n < 2 {
+		return n
+	}
+	if mem[n] == -1 {
+		mem[n] = FibRecursiveHelper(n-1, mem) + FibRecursiveHelper(n-2, mem)
+	}
+	return mem[n]
 }
