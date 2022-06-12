@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"sandbox/problems"
+	"sandbox/queue"
 )
 
 func main() {
-	fmt.Println(problems.FibRecursive(10))
+	fmt.Println(queue.WeaveTest())
 }

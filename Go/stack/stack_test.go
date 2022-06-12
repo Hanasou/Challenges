@@ -29,12 +29,12 @@ func TestSumFunc(t *testing.T) {
 
 func TestIsEmpty(t *testing.T) {
 	type test struct {
-		s      stack
+		s      Stack
 		answer bool
 	}
 
-	var s1 stack
-	var s2 stack = []interface{}{1, 2, 3}
+	var s1 Stack
+	var s2 Stack = []interface{}{1, 2, 3}
 
 	tests := []test{
 		test{s1, true},
@@ -42,7 +42,7 @@ func TestIsEmpty(t *testing.T) {
 	}
 
 	for _, v := range tests {
-		got := v.s.isEmpty()
+		got := v.s.IsEmpty()
 		want := v.answer
 		if got != want {
 			t.Error("Expected", want, "Got", got)

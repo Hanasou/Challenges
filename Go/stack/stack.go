@@ -1,7 +1,7 @@
 package stack
 
 // Stack is a stack. Deal with it.
-type stack []interface{}
+type Stack []interface{}
 
 func sliceIsEmpty(s []int) bool {
 	return len(s) == 0
@@ -11,16 +11,16 @@ func sumFunc(a, b int) int {
 	return a + b
 }
 
-func (s *stack) isEmpty() bool {
+func (s *Stack) IsEmpty() bool {
 	return len(*s) == 0
 }
 
-func (s *stack) push(item interface{}) {
+func (s *Stack) Push(item interface{}) {
 	*s = append(*s, item)
 }
 
-func (s *stack) pop() interface{} {
-	if s.isEmpty() {
+func (s *Stack) Pop() interface{} {
+	if s.IsEmpty() {
 		return false
 	}
 	el := (*s)[len(*s)-1]
@@ -28,10 +28,10 @@ func (s *stack) pop() interface{} {
 	return el
 }
 
-func (s *stack) peek() interface{} {
+func (s *Stack) peek() interface{} {
 	return (*s)[len(*s)-1]
 }
 
-func (s *stack) size() int {
+func (s *Stack) size() int {
 	return len(*s)
 }
