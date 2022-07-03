@@ -80,3 +80,15 @@ func nthToLast(n int, head *SingleNode) SingleNode {
 	}
 	return *p
 }
+
+func Midpoint(head *SingleNode) *SingleNode {
+	slow := head
+	fast := head
+
+	for fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+
+	return slow
+}
