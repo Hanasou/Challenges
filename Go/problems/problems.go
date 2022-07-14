@@ -9,6 +9,23 @@ import (
 	"strings"
 )
 
+// Helper function for returning max int
+func maxInt(a int, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
+}
+
+func minInt(a int, b int) int {
+	if a < b {
+		return a
+	} else {
+		return b
+	}
+}
+
 func Reverse(str string) string {
 	new := ""
 
@@ -331,4 +348,23 @@ func FibRecursiveHelper(n int, mem []int) int {
 		mem[n] = FibRecursiveHelper(n-1, mem) + FibRecursiveHelper(n-2, mem)
 	}
 	return mem[n]
+}
+
+func MaxProfit(prices []int) int {
+	// Choose a single day to buy, and a single day after that to sell
+	// Return the maximum profit you can achieve from this transaction
+	maxProfit := 0
+	minStock := math.MaxInt32
+	for i := 0; i < len(prices); i++ {
+		currStock := prices[i]
+		maxProfit = maxInt(maxProfit, currStock-minStock)
+		minStock = minInt(currStock, minStock)
+	}
+	return maxProfit
+}
+
+// nums is rotated around an unknown pivot
+// Return index of target, or -1 if the target is not in nums
+func searchRotated(nums []int, target int) int {
+	return 0
 }

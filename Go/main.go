@@ -2,18 +2,9 @@ package main
 
 import (
 	"fmt"
-	"sandbox/linkedlist"
+	"sandbox/problems"
 )
 
 func main() {
-	//fmt.Println(queue.WeaveTest())
-	n1 := &linkedlist.SingleNode{
-		Val:  1,
-		Next: nil,
-	}
-
-	n1.InsertFirst(3)
-	n1.Append(2)
-
-	fmt.Println(n1)
+	fmt.Println(problems.MaxProfit([]int{7, 1, 5, 3, 6, 4}))
 }
