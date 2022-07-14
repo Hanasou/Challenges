@@ -104,3 +104,18 @@ func isInBounds(grid [][]bool, point pair) bool {
 func combinationSum(candidates []int, target int) [][]int {
 	return nil
 }
+
+// Given an integer array nums, and integer k
+// Return the k most frequent elements
+// Example
+// Input: nums = [1,1,1,2,2,3], k = 2
+// Ouptut: [1,2]
+// The k (2) most frequently occurring numbers in "nums" is 1 with 3 and 2, with 2.
+// The algorithm must be better than O(nlogn), n being the size of nums
+func topKFrequent(nums []int, k int) []int {
+	// Try storing all the counts in a Map
+	// Key = number, value is the frequency
+	// How do we take the top k from the map?
+	// First Idea: Find the max value of the map k times, excluding the previous max
+	return nil
+}
