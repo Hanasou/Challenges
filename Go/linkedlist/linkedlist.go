@@ -57,6 +57,20 @@ func (this *SingleNode) String() string {
 	return s
 }
 
+func (this *SingleNode) PointerTest() {
+	for this != nil {
+		this = this.Next
+	}
+}
+
+func (this *SingleNode) Swap(a *SingleNode, b *SingleNode) {
+	// Find nodes a and b
+	// If they don't exist, then we can return an error or something but let's not worry about that for now
+	for this != nil {
+		this = this.Next
+	}
+}
+
 func reverse(n *SingleNode) SingleNode {
 	prev := &SingleNode{}
 	curr := n
