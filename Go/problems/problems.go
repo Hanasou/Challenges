@@ -10,7 +10,7 @@ import (
 )
 
 // Helper function for returning max int
-func maxInt(a int, b int) int {
+func MaxInt(a int, b int) int {
 	if a > b {
 		return a
 	} else {
@@ -18,12 +18,22 @@ func maxInt(a int, b int) int {
 	}
 }
 
-func minInt(a int, b int) int {
+func MinInt(a int, b int) int {
 	if a < b {
 		return a
 	} else {
 		return b
 	}
+}
+
+// Helper function to find index of int array
+func IndexOfArray(arr []int, ele int) int {
+	for i, v := range arr {
+		if v == ele {
+			return i
+		}
+	}
+	return -1
 }
 
 func Reverse(str string) string {
@@ -357,8 +367,8 @@ func MaxProfit(prices []int) int {
 	minStock := math.MaxInt32
 	for i := 0; i < len(prices); i++ {
 		currStock := prices[i]
-		maxProfit = maxInt(maxProfit, currStock-minStock)
-		minStock = minInt(currStock, minStock)
+		maxProfit = MaxInt(maxProfit, currStock-minStock)
+		minStock = MinInt(currStock, minStock)
 	}
 	return maxProfit
 }

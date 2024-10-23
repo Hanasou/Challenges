@@ -2,18 +2,10 @@ package main
 
 import (
 	"fmt"
-	"sandbox/linkedlist"
+	"sandbox/problems"
 )
 
 func main() {
-	list := &linkedlist.SingleNode{
-		Val:  0,
-		Next: nil,
-	}
-	list.InsertFirst(1)
-	list.InsertFirst(2)
-	fmt.Println(list)
-
-	list.PointerTest()
-	fmt.Println(list)
+	n := problems.ConvertToRanges([]int{0, 1, 3, 5, 50, 75}, 0, 100)
+	fmt.Println(n)
 }
